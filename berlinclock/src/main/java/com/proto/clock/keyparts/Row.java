@@ -1,13 +1,15 @@
 package com.proto.clock.keyparts;
 
-
+/**
+ * TBD
+ */
 public class Row
 {
     private final Lamp[] lamps;
 
-    public Row(int totalNumberOfLamps, Color... LampColors)
+    public Row(Color... lampColors)
     {
-        lamps =  createLamps(totalNumberOfLamps, LampColors);
+        lamps =  createLamps(lampColors);
     }
 
     public void switchOnLamps(int nLamps)
@@ -35,12 +37,12 @@ public class Row
         return lamps.length;
     }
 
-    private Lamp[] createLamps(int totalNumberOfLamps, Color[] LampColors)
+    private Lamp[] createLamps(Color[] lampColors)
     {
-        Lamp[] lamps = new Lamp[totalNumberOfLamps];
-        for(int n=0; n < totalNumberOfLamps; n++)
+        Lamp[] lamps = new Lamp[lampColors.length];
+        for(int n=0; n < lampColors.length; n++)
         {
-            Lamp lamp = new Lamp(LampColors[n]);
+            Lamp lamp = new Lamp(lampColors[n]);
             lamps[n] = lamp;
         }
         return lamps;

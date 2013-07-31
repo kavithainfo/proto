@@ -29,14 +29,14 @@ public class BerlinClockImpl implements IClock
 
     public BerlinClockImpl()
     {
-        topLamp = new Row(1, Color.YELLOW);
-        row1 = new Row(4, new Color[]{Color.RED, Color.RED, Color.RED, Color.RED});
-        row2 = new Row(4, new Color[]{Color.RED, Color.RED, Color.RED, Color.RED});
-        row3 = new Row(11, new Color[]{Color.YELLOW, Color.YELLOW, Color.RED,
+        topLamp = new Row(Color.YELLOW);
+        row1 = new Row(new Color[]{Color.RED, Color.RED, Color.RED, Color.RED});
+        row2 = new Row(new Color[]{Color.RED, Color.RED, Color.RED, Color.RED});
+        row3 = new Row(new Color[]{Color.YELLOW, Color.YELLOW, Color.RED,
                 Color.YELLOW, Color.YELLOW, Color.RED,
                 Color.YELLOW, Color.YELLOW, Color.RED,
                 Color.YELLOW, Color.YELLOW});
-        row4 = new Row(4, new Color[]{Color.YELLOW, Color.YELLOW, Color.YELLOW, Color.YELLOW});
+        row4 = new Row(new Color[]{Color.YELLOW, Color.YELLOW, Color.YELLOW, Color.YELLOW});
     }
 
 
