@@ -1,7 +1,6 @@
 package com.proto.clock.keyparts;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -14,40 +13,61 @@ import org.junit.Test;
 public class LampTest
 {
 
+    private final Lamp lamp = new Lamp();
+
     @Test
-    public void testLamp()
+    public void test_LampColorRed()
     {
-
-        System.out.println("\nTesting the creation of a lamp, and its properties: ON/OFF & RED/YELLOW:");
-
-        // create a new Red lamp, switch on and check if it is on and print the state of the lamp
-        Lamp lamp1 = new Lamp();
-        lamp1.setColor(Color.RED);
-        lamp1.setSwitchOn();
-
-        System.out.println("Lamp1 is " + lamp1.toString());
-
-        assertTrue("True if the lamp is switched on!", !lamp1.isSwitchedOFF());
-        assertEquals("R", lamp1.getColor().getValue());
-
-        // now yellow lamp, switched OFF
-        lamp1.setColor(Color.YELLOW);
-        lamp1.setSwitchOff();
-
-        System.out.println("Lamp1 is now " + lamp1.toString());
-
-        assertTrue("True if the lamp is switched OFF!", lamp1.isSwitchedOFF());
-        assertEquals("O", lamp1.getState().getValue());
-
-        // now yellow lamp, switched OFF
-        lamp1.setColor(Color.YELLOW);
-        lamp1.setSwitchOn();
-
-        System.out.println("Lamp1 is now changed to " + lamp1.toString());
-
-        assertTrue("True if the lamp is switched ON!", !lamp1.isSwitchedOFF());
-        assertEquals("Y", lamp1.getColor().getValue());
-
+        lamp.setColor(Color.RED);
+        assertEquals("R", lamp.getColor().getValue());
     }
+
+    @Test
+    public void test_LampColorYellow()
+    {
+        lamp.setColor(Color.YELLOW);
+        assertEquals("Y", lamp.getColor().getValue());
+    }
+
+
+    @Test
+    public void testRedLamp_OFF_State()
+    {
+        lamp.setColor(Color.RED);
+        assertEquals("O", lamp.getState().getValue());
+    }
+
+    @Test
+    public void testRedLamp_ON_State()
+    {
+        lamp.setColor(Color.RED);
+        lamp.on();
+        assertEquals("R", lamp.getColor().getValue());
+    }
+
+    @Test
+    public void testYellowLamp_OFF_State()
+    {
+        lamp.setColor(Color.RED);
+        assertEquals("O", lamp.getState().getValue());
+    }
+
+    @Test
+    public void testYellowLamp_ON_State()
+    {
+        lamp.setColor(Color.YELLOW);
+        lamp.on();
+        assertEquals("Y", lamp.getColor().getValue());
+    }
+
+    @Test
+    public void test_ToString()
+    {
+        lamp.setColor(Color.YELLOW);
+        lamp.on();
+        assertEquals("Y", lamp.getColor().getValue());
+    }
+
+
 
 }

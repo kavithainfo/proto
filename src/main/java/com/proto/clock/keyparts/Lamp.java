@@ -24,30 +24,35 @@ public class Lamp
         return color;
     }
 
-    public void setSwitchOn()
-    {
-        state = State.ON;
-    }
-
-    public void setSwitchOff()
-    {
-        state = State.OFF;
-    }
-
-    public boolean isSwitchedOFF()
-    {
-        return (state == State.OFF);
-    }
-
     public State getState()
     {
         return state;
     }
 
+    public void on()
+    {
+        state = State.ON;
+    }
+
+    public void off()
+    {
+        state = State.OFF;
+    }
+
+    public boolean isOFF()
+    {
+        return (state == State.OFF);
+    }
+
+    public boolean isON()
+    {
+        return (state == State.ON);
+    }
+
     @Override
     public String toString()
     {
-        if(isSwitchedOFF())
+        if(isOFF())
         {
             return state.getValue();
         }
