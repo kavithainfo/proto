@@ -1,5 +1,10 @@
 package com.proto.clock.keyparts;
 
+/**
+ * enum representing the ON/OFF state of the lamp
+ * @author kavitha
+ *
+ */
 public enum State
 {
     ON("L"), OFF("O");

@@ -7,6 +7,12 @@ import com.google.common.base.Preconditions;
 import com.proto.clock.BerlinClockImpl;
 import com.proto.clock.IClock;
 
+/**
+ * Main class
+ * Run to see the end to end functionality of Berlin Clock application
+ * @author kavitha
+ *
+ */
 public class Main
 {
     public static void main(String args[])

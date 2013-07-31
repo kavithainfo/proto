@@ -1,7 +1,9 @@
 package com.proto.clock.keyparts;
 
 /**
- * TBD
+ * class representing a row of the Berlin Clock
+ * @author kavitha
+ *
  */
 public class Row
 {

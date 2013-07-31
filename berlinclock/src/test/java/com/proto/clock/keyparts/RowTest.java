@@ -4,6 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Test the behaviour of a row of lamps in the Berlin Clock
+ * @author kavitha
+ *
+ */
 public class RowTest
 {
 

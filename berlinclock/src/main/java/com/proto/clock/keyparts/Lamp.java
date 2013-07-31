@@ -1,5 +1,10 @@
 package com.proto.clock.keyparts;
 
+/**
+ * Class representing a lamp in a row of the berlin clock
+ * @author kavitha
+ *
+ */
 public class Lamp
 {
     private Color color;
