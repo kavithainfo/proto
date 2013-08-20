@@ -6,6 +6,10 @@ public interface IDeck
 {
     public List<Card> getCards();
 
+    public void shuffle();
+
+    public List<Card> draw(int nNumberOfCards);
+
 
 
 }

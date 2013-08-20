@@ -35,9 +35,14 @@ public class Card
             return true;
         }
 
-
         return false;
+    }
 
+    @Override
+    public int hashCode()
+    {
+
+        return 0;
     }
 
 }

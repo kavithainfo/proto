@@ -1,7 +1,7 @@
 package com.kavi.cardgame.model;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -9,12 +9,14 @@ import org.junit.Test;
 
 public class DeckTest {
 
-    private final IDeck deck = new Deck();
+
 
     @Test
     public void testInitialiseDeck()
     {
+        IDeck deck = new Deck();
         List<Card> cards = deck.getCards();
+        assertEquals(52,  cards.size());
         assertTrue(cards.contains(new Card(Suite.ACE, Rank.ACE)));
         assertTrue(cards.contains(new Card(Suite.ACE, Rank.TWO)));
         assertTrue(cards.contains(new Card(Suite.ACE, Rank.THREE)));
@@ -72,32 +74,62 @@ public class DeckTest {
         assertTrue(cards.contains(new Card(Suite.DIAMOND, Rank.QUEEN)));
         assertTrue(cards.contains(new Card(Suite.DIAMOND, Rank.KING)));
 
-
-
     }
 
     @Test
     public void testShuffleDeck()
     {
-        fail("Not yet implemented");
+        IDeck deck = new Deck();
+        List<Card> cards = deck.getCards();
+        Card cardFirst = cards.get(0);
+
+        deck.shuffle();
+        List<Card> shuffledCards = deck.getCards();
+        Card shuffledCardFirst = shuffledCards.get(0);
+
+        // check that the the first card in the shuffled pack is not the same
+        assertTrue(!cardFirst.equals(shuffledCardFirst));
+
+
     }
 
     @Test
     public void testDraw_ONE_Card()
     {
-        fail("Not yet implemented");
+        IDeck deck = new Deck();
+        List<Card> drawnCards = deck.draw(1);
+        assertEquals(1, drawnCards.size());
+        for(Card card: drawnCards)
+        {
+            System.out.println("Drawn card: " + card.getSuite().name() + "-" + card.getRank().name());
+        }
+        assertEquals(51, deck.getCards().size());
     }
 
     @Test
     public void testDraw_TWO_Cards()
     {
-        fail("Not yet implemented");
+        IDeck deck = new Deck();
+        List<Card> drawnCards = deck.draw(2);
+        assertEquals(2, drawnCards.size());
+        for(Card card: drawnCards)
+        {
+            System.out.println("Drawn card: " + card.getSuite().name() + "-" + card.getRank().name());
+        }
+        assertEquals(50, deck.getCards().size());
     }
 
     @Test
     public void testDraw_N_Cards()
     {
-        fail("Not yet implemented");
+        IDeck deck = new Deck();
+        List<Card> drawnCards = deck.draw(10);
+        assertEquals(10, drawnCards.size());
+        for(Card card: drawnCards)
+        {
+            System.out.println("Drawn card: " + card.getSuite().name() + "-" + card.getRank().name());
+        }
+        assertEquals(42, deck.getCards().size());
     }
 
 
